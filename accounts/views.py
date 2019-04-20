@@ -45,6 +45,10 @@ def sort_by_ammount_ascending(request):
     sum = expenses.objects.aggregate(Sum('ammount'))
     return render(request,'expenses_details.html',{'obj':obj,'sum':sum})
 
+# function to get back from expense show page
+def back_to_home(request):
+    return render(request,'home.html')
+    
 
 def send(request):   # to accept the input od expenses  
     description = request.POST["description"]
