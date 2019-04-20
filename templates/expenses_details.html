@@ -28,16 +28,16 @@
 }
     
 .dropbtn {
-  background-color: #3498DB;
+  background-color: black;
   color: white;
-  padding: 16px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 12px;
   border: none;
   cursor: pointer;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  background-color: black;
 }
 
 .dropdown {
@@ -94,7 +94,9 @@
     </tr>
   {% endfor %}
 </table>
+    
 total_sum = {{sum.ammount__sum}}
+<br><br>
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Sort</button>
   <div id="myDropdown" class="dropdown-content">
@@ -125,6 +127,11 @@ window.onclick = function(event) {
   }
 }
 </script>
+<br><br>    
+<form method="post" action="{% url 'back_to_home' %}">
+    {% csrf_token %}
+     <input type="submit" value= "home page">
+</form>
 
     </body>
 </html>
