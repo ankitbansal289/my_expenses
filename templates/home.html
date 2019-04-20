@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Add expenses{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+<form method="post" action="{% url 'send' %}">
+    {% csrf_token %}
+     <br>description:<br>
+     <input type="text" name="description"><br>
+     ammount:<br>
+     <input type="text" name="ammount">
+     <br>place:<br>
+     <input type="text" name="place">
+     <input type="submit">
+</form>     
+<a href="{% url 'get_expense' %}">get expenses</a>
+
+
+
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+{% endblock %}
