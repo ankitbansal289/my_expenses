@@ -16,6 +16,6 @@ urlpatterns = [
     path('sort_by_date/',accounts.views.sort_by_date,name='sort_by_date' ),
     path('sort_by_ammount_ascending/',accounts.views.sort_by_ammount_ascending,name='sort_by_ammount_ascending' ),
     path('sort_by_ammount_descending/',accounts.views.sort_by_ammount_descending,name='sort_by_ammount_descending' ),
-    
+    path('back_to_home',accounts.views.back_to_home,name='back_to_home'),
 ]
 
